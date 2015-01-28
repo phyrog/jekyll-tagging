@@ -26,7 +26,7 @@ module Jekyll
     # A <tt>tag_page_layout</tt> have to be defined in your <tt>_config.yml</tt>
     # to use this.
     def generate_tag_pages
-      active_tags.each { |tag, posts| new_tag(tag, posts) }
+      active_tags.each { |tag, posts| new_tag(tag, posts.uniq) }
     end
 
     def new_tag(tag, posts)
